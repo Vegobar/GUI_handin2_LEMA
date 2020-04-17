@@ -39,15 +39,6 @@ a {
     background: #1B1E21;
 }
 
-img {
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 9%;
-    left: 0;
-}
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -83,11 +74,20 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+body{
+    background: url('../Img/fresh-appetizing-breakfast-dark-background_1220-4570 (1).jpg') no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    color:#fff;
+    background-color:#333;
+    font-family:'Open sans',Arial,Helvetica, sans-serif;
 }
+
 .footer {
+  position: absolute;
+  box-shadow:none;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
