@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Mikkel\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Mikkel\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GUI_Try2222.955599686.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Mikkel\Desktop\GUI_Try2222" t="IncludeFlat">
+    <e p="C:\Users\Mikkel\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GUI_Try2222.730745149.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Mikkel\source\repos\Vegobar\GUI_handin2_LEMA" t="IncludeFlat">
       <e p="GUI_Try2222" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -31,6 +31,12 @@
             <e p="00000000000000_CreateIdentitySchema.Designer.cs" t="Include" />
             <e p="20200409185331_ExtendedUsersAndRoles.cs" t="Include" />
             <e p="20200409185331_ExtendedUsersAndRoles.Designer.cs" t="Include" />
+            <e p="20200415190856_InitialMigrations.cs" t="Include" />
+            <e p="20200415190856_InitialMigrations.Designer.cs" t="Include" />
+            <e p="20200415191014_new_test.cs" t="Include" />
+            <e p="20200415191014_new_test.Designer.cs" t="Include" />
+            <e p="20200417110441_newDato.cs" t="Include" />
+            <e p="20200417110441_newDato.Designer.cs" t="Include" />
             <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
           </e>
         </e>
@@ -77,10 +83,14 @@
           </e>
           <e p="Reception" t="Include">
             <e p="Create.cshtml" t="Include" />
+            <e p="Create_test.cshtml" t="Include" />
             <e p="Delete.cshtml" t="Include" />
+            <e p="Delete_test.cshtml" t="Include" />
             <e p="Details.cshtml" t="Include" />
             <e p="Edit.cshtml" t="Include" />
+            <e p="Edit_test.cshtml" t="Include" />
             <e p="Index.cshtml" t="Include" />
+            <e p="Index_test.cshtml" t="Include" />
           </e>
           <e p="Shared" t="Include">
             <e p="_Layout.cshtml" t="Include" />
@@ -91,9 +101,11 @@
         </e>
         <e p="wwwroot" t="Include">
           <e p="css" t="Include">
+            <e p="flipcalender.css" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
+          <e p="Img" t="Include" />
           <e p="js" t="Include">
             <e p="site.js" t="Include" />
           </e>
