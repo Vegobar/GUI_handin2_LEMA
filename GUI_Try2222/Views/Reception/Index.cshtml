@@ -1,0 +1,99 @@
+﻿@model IEnumerable<GUI_Try2222.Data.ExpectedArrival>
+
+@{
+    ViewData["Title"] = "Index_test";
+    var totalAdults = 0;
+    var totalChildren = 0;
+    var dates = new List<Tuple<int, int, string>>();
+
+
+    int i = 0;
+
+    foreach (var item in Model)
+    {
+        dates.Add(new Tuple<int, int, string>(item.Adults, item.Children, item.ExpenseDate.ToString()));
+    }
+}
+
+<h1>Indivual guest list</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Children)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           // totalAdults += item.Adults;
+            //totalChildren += item.Children;
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Children)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AdjustId> ">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AdjustId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AdjustId">Delete</a>
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+<h1>Total guests list</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Children)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.ExpenseDate == DateTime.Now)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => totalAdults)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => totalChildren)
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>

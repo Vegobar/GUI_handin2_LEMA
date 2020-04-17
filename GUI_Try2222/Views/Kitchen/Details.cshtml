@@ -1,0 +1,26 @@
+﻿@model GUI_Try2222.Data.Booking
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adults)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adults)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Children)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Children)
+        </dd>
+    </dl>
+</div>
