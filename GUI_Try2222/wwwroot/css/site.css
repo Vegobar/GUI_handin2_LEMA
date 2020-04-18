@@ -53,6 +53,7 @@ nav a {
 .btn-primary {
     color: black;
     background-color: #C0C0C0;
+    border-color: black;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
