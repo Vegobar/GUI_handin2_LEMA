@@ -26,147 +26,165 @@ namespace GUI_Try2222.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ExpectedArrival.ToListAsync());
+            MappedAllData model = new MappedAllData();
+            model.expectexArrival = _context.ExpectedArrival.ToList();
+            model.booking = _context.Booking.ToList();
+
+            return View(model);
         }
 
 
-        // GET: Kitchen/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //// GET: Kitchen/Details/5
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var booking = await _context.ExpectedArrival
-                .FirstOrDefaultAsync(m => m.AdjustId == id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
+        //    var booking = await _context.ExpectedArrival
+        //        .FirstOrDefaultAsync(m => m.AdjustId == id);
+        //    if (booking == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(booking);
-        }
+        //    return View(booking);
+        //}
 
         
         public IActionResult CookingDetails(string myDate)
         {
+            MappedAllData model = new MappedAllData();
+            model.expectexArrival = _context.ExpectedArrival.ToList();
+            model.booking = _context.Booking.ToList();
             if (myDate == null)
             {
-                return View(_context.ExpectedArrival.Where(o => o.ExpenseDate == DateTime.Today));
+                model.NewDate = DateTime.Today;
             }
             else
             {
-                return View(_context.ExpectedArrival.Where(o => o.ExpenseDate == DateTime.Parse(myDate)));
+                model.NewDate = DateTime.Parse(myDate);
             }
-        }
 
-
-        // GET: Kitchen/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Kitchen/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
-        {
-            if (ModelState.IsValid)
+            if (myDate == null)
             {
-                _context.Add(booking);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return View(model.expectexArrival.Where(o => o.ExpenseDate == DateTime.Today));
+                return View(model);
             }
-            return View(booking);
+            else
+            {
+                //return View(model.expectexArrival.Where(o => o.ExpenseDate == DateTime.Parse(myDate)));
+                return View(model);
+            }
         }
 
-        // GET: Kitchen/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var booking = await _context.ExpectedArrival.FindAsync(id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
-            return View(booking);
-        }
+        //// GET: Kitchen/Create
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        // POST: Kitchen/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
-        {
-            if (id != booking.AdjustId)
-            {
-                return NotFound();
-            }
+        //// POST: Kitchen/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(booking);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(booking);
+        //}
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(booking);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookingExists(booking.AdjustId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(booking);
-        }
+        //// GET: Kitchen/Edit/5
+        //public async Task<IActionResult> Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-        // GET: Kitchen/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //    var booking = await _context.ExpectedArrival.FindAsync(id);
+        //    if (booking == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(booking);
+        //}
 
-            var booking = await _context.ExpectedArrival
-                .FirstOrDefaultAsync(m => m.AdjustId == id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
+        //// POST: Kitchen/Edit/5
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
+        //{
+        //    if (id != booking.AdjustId)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(booking);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(booking);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!BookingExists(booking.AdjustId))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(booking);
+        //}
 
-        // POST: Kitchen/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var booking = await _context.ExpectedArrival.FindAsync(id);
-            _context.ExpectedArrival.Remove(booking);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        //// GET: Kitchen/Delete/5
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-        private bool BookingExists(int id)
-        {
-            return _context.ExpectedArrival.Any(e => e.AdjustId == id);
-        }
+        //    var booking = await _context.ExpectedArrival
+        //        .FirstOrDefaultAsync(m => m.AdjustId == id);
+        //    if (booking == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(booking);
+        //}
+
+        //// POST: Kitchen/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var booking = await _context.ExpectedArrival.FindAsync(id);
+        //    _context.ExpectedArrival.Remove(booking);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        //private bool BookingExists(int id)
+        //{
+        //    return _context.ExpectedArrival.Any(e => e.AdjustId == id);
+        //}
     }
 }
