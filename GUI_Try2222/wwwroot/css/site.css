@@ -23,10 +23,12 @@ nav a {
     font-style: oblique;
 }
 
-.form-group {
-    float: left;
-    margin-right: 5px;
+.expected-dec {
+    font-family: 'Montserrat';
+    color: #C0C0C0;
+    font-style: oblique;
 }
+
 
 .control-label {
     color: #C0C0C0;
@@ -49,9 +51,8 @@ nav a {
 
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: black;
+    background-color: #C0C0C0;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
