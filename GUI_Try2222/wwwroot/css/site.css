@@ -20,6 +20,12 @@ nav a {
 .booking-dec {
     font-family: 'Montserrat';
     color: #C0C0C0;
+    font-style: oblique;
+}
+
+.form-group {
+    float: left;
+    margin-right: 5px;
 }
 
 .control-label {
