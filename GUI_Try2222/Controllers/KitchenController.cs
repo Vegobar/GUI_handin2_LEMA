@@ -8,10 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using GUI_Try2222.Data;
 using Microsoft.AspNetCore.Authorization;
 using System.Dynamic;
+using GUI_Try2222.Models;
 
 namespace GUI_Try2222.Controllers
 {
-    [Authorize(Roles = "Restaurant")]
+    //[Authorize(Roles = "Restaurant")]
     public class KitchenController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,10 +23,12 @@ namespace GUI_Try2222.Controllers
         }
 
         // GET: Kitchen
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Booking.ToListAsync());
+            return View(await _context.ExpectedArrival.ToListAsync());
         }
+
 
         // GET: Kitchen/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -35,8 +38,8 @@ namespace GUI_Try2222.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Booking
-                .FirstOrDefaultAsync(m => m.BookingId == id);
+            var booking = await _context.ExpectedArrival
+                .FirstOrDefaultAsync(m => m.AdjustId == id);
             if (booking == null)
             {
                 return NotFound();
@@ -45,9 +48,17 @@ namespace GUI_Try2222.Controllers
             return View(booking);
         }
 
-        public IActionResult CookingDetails()
+        
+        public IActionResult CookingDetails(string myDate)
         {
-            return View(_context.Booking);
+            if (myDate == null)
+            {
+                return View(_context.ExpectedArrival.Where(o => o.ExpenseDate == DateTime.Today));
+            }
+            else
+            {
+                return View(_context.ExpectedArrival.Where(o => o.ExpenseDate == DateTime.Parse(myDate)));
+            }
         }
 
 
@@ -62,7 +73,7 @@ namespace GUI_Try2222.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookingId,RoomNumber,Adults,Children")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +92,7 @@ namespace GUI_Try2222.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Booking.FindAsync(id);
+            var booking = await _context.ExpectedArrival.FindAsync(id);
             if (booking == null)
             {
                 return NotFound();
@@ -94,9 +105,9 @@ namespace GUI_Try2222.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomNumber,Adults,Children")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Adults,Children,ExpenseDate")] ExpectedArrival booking)
         {
-            if (id != booking.BookingId)
+            if (id != booking.AdjustId)
             {
                 return NotFound();
             }
@@ -110,7 +121,7 @@ namespace GUI_Try2222.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BookingExists(booking.BookingId))
+                    if (!BookingExists(booking.AdjustId))
                     {
                         return NotFound();
                     }
@@ -132,8 +143,8 @@ namespace GUI_Try2222.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Booking
-                .FirstOrDefaultAsync(m => m.BookingId == id);
+            var booking = await _context.ExpectedArrival
+                .FirstOrDefaultAsync(m => m.AdjustId == id);
             if (booking == null)
             {
                 return NotFound();
@@ -147,15 +158,15 @@ namespace GUI_Try2222.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var booking = await _context.Booking.FindAsync(id);
-            _context.Booking.Remove(booking);
+            var booking = await _context.ExpectedArrival.FindAsync(id);
+            _context.ExpectedArrival.Remove(booking);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BookingExists(int id)
         {
-            return _context.Booking.Any(e => e.BookingId == id);
+            return _context.ExpectedArrival.Any(e => e.AdjustId == id);
         }
     }
 }

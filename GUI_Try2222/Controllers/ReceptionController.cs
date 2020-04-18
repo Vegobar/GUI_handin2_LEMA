@@ -24,7 +24,7 @@ namespace GUI_Try2222.Controllers
         // GET: ExpectedArrivals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ExpectedArrival.ToListAsync());
+            return View(await _context.ExpectedArrival.ToListAsync()); 
         }
         
      
