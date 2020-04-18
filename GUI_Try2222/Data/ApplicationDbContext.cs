@@ -16,5 +16,6 @@ namespace GUI_Try2222.Data
         }
         public DbSet<GUI_Try2222.Data.Booking> Booking { get; set; }
         public DbSet<GUI_Try2222.Data.ExpectedArrival> ExpectedArrival { get; set; }
+
     }
 }

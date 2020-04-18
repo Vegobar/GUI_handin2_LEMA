@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GUI_Try2222.Data.ExpectedArrival>
+﻿@*@model IEnumerable<GUI_Try2222.Data.ExpectedArrival>*@
+@model GUI_Try2222.Models.MappedAllData
 
 <!DOCTYPE html>
 
@@ -19,45 +20,97 @@
 
 <form method="POST">
     <label for="myDate">Date goes here</label>
-    <input for="myDate" type="date" id="myDate" name="myDate"/>
+    <input for="myDate" type="date" id="myDate" name="myDate" />
     <input type="submit" />
 </form>
 
-<h1>Expected guets list</h1>
-<table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Adults)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Children)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-           @{ 
-               var adultsTotal = 0;
-               var childrenTotal = 0;
-            }
+@if (Model.NewDate == null)
+{
+    <h1>Not checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+}
+else
+{
+    <h1>Not checked in @Model.NewDate.ToString("dd/MM/yyyy")</h1>
+}
 
-            @foreach(var items in Model)
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adults
+            </th>
+            <th>
+                Children
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var adultsTotal = 0;
+            var childrenTotal = 0;
+        }
+
+
+        @foreach (var items in Model.expectexArrival)
+        {
+            if (Model.NewDate == null)
+            {
+                if (items.ExpenseDate == DateTime.Today)
+                {
+                    adultsTotal += items.Adults;
+                    childrenTotal += items.Children;
+                }
+            }
+            else if (items.ExpenseDate == Model.NewDate)
             {
                 adultsTotal += items.Adults;
                 childrenTotal += items.Children;
             }
+        }
 
-           
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => adultsTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => childrenTotal)
+            </td>
+        </tr>
 
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => adultsTotal)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => childrenTotal)
-                    </td>
-                </tr>
-           
+</table>
+
+
+<h1>Checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adults
+            </th>
+            <th>
+                Children
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.booking)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adults)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Children)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
 </table>
 
