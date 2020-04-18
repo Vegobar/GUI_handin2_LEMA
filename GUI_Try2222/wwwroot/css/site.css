@@ -13,14 +13,24 @@ a {
   color: #0366d6;
 }
 
-.logo{
-    font-family:'Poppins',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    font-size:20px;
-    color:rgb(226,226,226);
-
+nav a {
+    color: #B0B0B0;
 }
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(176,176,176)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.logo {
+    font-family: 'Poppins',sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    color: rgb(226,226,226);
+    margin-left:0;
+    margin-right:30px;
+}
+
 
 .btn-primary {
   color: #fff;
@@ -29,7 +39,7 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #A7A590;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -39,11 +49,10 @@ a {
     background: #1B1E21;
 }
 
-
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
