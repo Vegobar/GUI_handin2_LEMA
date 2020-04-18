@@ -12,9 +12,12 @@
 
     }
 
-</head>
-<h1>GuestList</h1>
 
+
+</head>
+
+<h1>GuestList</h1>
+<button onClick="window.location.reload();">Refresh Page</button>
 
 <h2>Show items but selecting a date and press enter</h2>
 
@@ -26,11 +29,11 @@
 
 @if (Model.NewDate == null)
 {
-    <h1>Not checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+    <h1>Expected guests today @DateTime.Today.ToString("dd/MM/yyyy")</h1>
 }
 else
 {
-    <h1>Not checked in @Model.NewDate.ToString("dd/MM/yyyy")</h1>
+    <h1>Expected guests for date @Model.NewDate.ToString("dd/MM/yyyy")</h1>
 }
 
 <table class="table">
@@ -80,6 +83,73 @@ else
 
 </table>
 
+@if (Model.NewDate == null)
+{
+    <h1>Not checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+}
+else
+{
+    <h1>Not checked in @Model.NewDate.ToString("dd/MM/yyyy")</h1>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adults
+            </th>
+            <th>
+                Children
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var adultsTotal_not_checked_in = 0;
+            var childrenTotal_not_checked_in = 0;
+            var checkedInAdults = 0;
+            var checkedInChildren = 0;
+
+        }
+
+            @foreach (var items in Model.booking)
+            {
+                if (Model.NewDate == DateTime.Today)
+                {
+                    checkedInAdults += items.Adults;
+                    checkedInChildren += items.Children;
+                }
+            }
+
+            @foreach (var items in Model.expectexArrival)
+            {
+                if (Model.NewDate == null)
+                {
+                    if (items.ExpenseDate == DateTime.Today)
+                    {
+                        adultsTotal_not_checked_in += items.Adults;
+                        childrenTotal += items.Children;
+                    }
+                }
+                else if (items.ExpenseDate == Model.NewDate)
+                {
+                    adultsTotal_not_checked_in += items.Adults;
+                    childrenTotal_not_checked_in += items.Children;
+                }
+            }
+
+            <tr>
+                <td>
+                    @(adultsTotal_not_checked_in - checkedInAdults)
+                </td>
+                <td>
+                    @(childrenTotal_not_checked_in - checkedInChildren)
+                </td>
+            </tr>
+
+</table>
+
 
 <h1>Checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
 <table class="table">
@@ -99,9 +169,6 @@ else
         @foreach (var item in Model.booking)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RoomNumber)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Adults)
                 </td>

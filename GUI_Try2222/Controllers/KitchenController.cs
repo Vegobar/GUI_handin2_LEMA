@@ -58,13 +58,13 @@ namespace GUI_Try2222.Controllers
             MappedAllData model = new MappedAllData();
             model.expectexArrival = _context.ExpectedArrival.ToList();
             model.booking = _context.Booking.ToList();
-            if (myDate == null)
+            if(myDate == null)
             {
                 model.NewDate = DateTime.Today;
             }
             else
             {
-                model.NewDate = DateTime.Parse(myDate);
+            model.NewDate = DateTime.Parse(myDate);
             }
 
             if (myDate == null)
