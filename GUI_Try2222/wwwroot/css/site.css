@@ -97,19 +97,20 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-body{
+body {
     background: url('../Img/fresh-appetizing-breakfast-dark-background_1220-4570 (1).jpg') no-repeat center center fixed;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    color:#fff;
-    background-color:#333;
-    font-family:'Open sans',Arial,Helvetica, sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    background-color: #333;
+    font-family: 'Open sans',Arial,Helvetica, sans-serif;
+    height: 100%;
 }
 
 .footer {
@@ -117,16 +118,25 @@ body{
   box-shadow:none;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   line-height: 60px; /* Vertically center the text there */
 }
+
+#main{
+    overflow:auto;
+    padding-bottom: 100px;
+}
+
+#container{
+    min-height:100%;
+}
+
+
 
 
 /*
     Style for calender
 */
-
-
 .container_calender {
     width: 400px;
     height: 200px;
