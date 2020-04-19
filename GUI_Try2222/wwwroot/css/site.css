@@ -135,16 +135,6 @@ body {
   overflow:hidden;
 }
 
-#wrapper {
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 0;
-}
-
 
 .buttons_kitchen {
     background-color: #ababab;
