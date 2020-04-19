@@ -104,7 +104,7 @@ namespace GUI_Try2222.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Adults,Children")] ExpectedArrival expectedArrival)
+        public async Task<IActionResult> Edit(int id, [Bind("Adults,Children,ExpenseDate")] ExpectedArrival expectedArrival)
         {
             if (id != expectedArrival.AdjustId)
             {
