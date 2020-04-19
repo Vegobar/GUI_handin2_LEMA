@@ -99,6 +99,7 @@ button.accept-policy {
 html {
     position: relative;
     min-height: 100%;
+    overflow-x:hidden;
 }
 
 body {
@@ -111,6 +112,7 @@ body {
     background-color: #333;
     font-family: 'Open sans',Arial,Helvetica, sans-serif;
     height: 100%;
+    overflow-x:hidden;
 }
 
 .footer {
@@ -130,6 +132,11 @@ body {
 #container{
     min-height:100%;
 }
+
+.container{
+  overflow:hidden;
+}
+
 
 .buttons_kitchen {
     background-color: #ababab;
