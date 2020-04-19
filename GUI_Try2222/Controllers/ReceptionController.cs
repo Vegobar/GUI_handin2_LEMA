@@ -91,12 +91,12 @@ namespace GUI_Try2222.Controllers
                 return NotFound();
             }
 
-            var booking = await _context.Booking.FindAsync(id);
-            if (booking == null)
+            var expectedArrival = await _context.ExpectedArrival.FindAsync(id);
+            if (expectedArrival == null)
             {
                 return NotFound();
             }
-            return View(booking);
+            return View(expectedArrival);
         }
 
         // POST: Reception/Edit/5
