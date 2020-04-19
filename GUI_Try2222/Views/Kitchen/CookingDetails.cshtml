@@ -11,8 +11,8 @@
 
 
     }
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -27,91 +27,93 @@
     <input type="submit" />
 </form>
 
-@if (Model.NewDate == null)
-{
-    <h1>Expected guests today @DateTime.Today.ToString("dd/MM/yyyy")</h1>
-}
-else
-{
-    <h1>Expected guests for date @Model.NewDate.ToString("dd/MM/yyyy")</h1>
-}
+<div class="w3-container">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Adults
-            </th>
-            <th>
-                Children
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            var adultsTotal = 0;
-            var childrenTotal = 0;
-        }
+    @if (Model.NewDate == null)
+    {
+        <h1>Expected guests today @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+    }
+    else
+    {
+        <h1>Expected guests for date @Model.NewDate.ToString("dd/MM/yyyy")</h1>
+    }
+
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-gray">
+                <th>
+                    Adults
+                </th>
+                <th>
+                    Children
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var adultsTotal = 0;
+                var childrenTotal = 0;
+            }
 
 
-        @foreach (var items in Model.expectexArrival)
-        {
-            if (Model.NewDate == null)
+            @foreach (var items in Model.expectexArrival)
             {
-                if (items.ExpenseDate == DateTime.Today)
+                if (Model.NewDate == null)
+                {
+                    if (items.ExpenseDate == DateTime.Today)
+                    {
+                        adultsTotal += items.Adults;
+                        childrenTotal += items.Children;
+                    }
+                }
+                else if (items.ExpenseDate == Model.NewDate)
                 {
                     adultsTotal += items.Adults;
                     childrenTotal += items.Children;
                 }
             }
-            else if (items.ExpenseDate == Model.NewDate)
-            {
-                adultsTotal += items.Adults;
-                childrenTotal += items.Children;
+
+            <tr>
+                <td style="color:black">
+                    @Html.DisplayFor(modelItem => adultsTotal)
+                </td>
+                <td style="color:black">
+                    @Html.DisplayFor(modelItem => childrenTotal)
+                </td>
+            </tr>
+
+    </table>
+
+    @if (Model.NewDate == null)
+    {
+        <h1>Not checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+    }
+    else
+    {
+        <h1>Not checked in @Model.NewDate.ToString("dd/MM/yyyy")</h1>
+    }
+
+
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-gray">
+                <th>
+                    Adults
+                </th>
+                <th>
+                    Children
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var adultsTotal_not_checked_in = 0;
+                var childrenTotal_not_checked_in = 0;
+                var checkedInAdults = 0;
+                var checkedInChildren = 0;
+
             }
-        }
-
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => adultsTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => childrenTotal)
-            </td>
-        </tr>
-
-</table>
-
-@if (Model.NewDate == null)
-{
-    <h1>Not checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
-}
-else
-{
-    <h1>Not checked in @Model.NewDate.ToString("dd/MM/yyyy")</h1>
-}
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Adults
-            </th>
-            <th>
-                Children
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            var adultsTotal_not_checked_in = 0;
-            var childrenTotal_not_checked_in = 0;
-            var checkedInAdults = 0;
-            var checkedInChildren = 0;
-
-        }
 
             @foreach (var items in Model.booking)
             {
@@ -140,44 +142,47 @@ else
             }
 
             <tr>
-                <td>
+                <td style="color:black">
                     @(adultsTotal_not_checked_in - checkedInAdults)
                 </td>
-                <td>
+                <td style="color:black">
                     @(childrenTotal_not_checked_in - checkedInChildren)
                 </td>
             </tr>
 
-</table>
+    </table>
 
 
-<h1>Checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Adults
-            </th>
-            <th>
-                Children
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var item in Model.booking)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Adults)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Children)
-                </td>
-                <td>
-                </td>
+    <h1>Checked in @DateTime.Today.ToString("dd/MM/yyyy")</h1>
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-gray">
+                <th>
+                    Adults
+                </th>
+                <th>
+                    Children
+                </th>
+               
             </tr>
-        }
-</table>
+        </thead>
+        <tbody>
+            @{  var bookingadult = 0;
+                var booingchild = 0;}
 
+            @foreach (var item in Model.booking)
+            {
+                bookingadult += item.Adults;
+                booingchild += item.Children;
+            }
+                <tr>
+                    <td style="color:black">
+                        @Html.DisplayFor(modelItem => bookingadult)
+                    </td>
+                    <td style="color:black">
+                        @Html.DisplayFor(modelItem => booingchild)
+                    </td>
+                </tr>
+            
+    </table>
+</div>
