@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
-
-<h1>GuestList</h1>
-<button onClick="window.location.reload();">Refresh Page</button>
-
-<h2>Show items but selecting a date and press enter</h2>
-
-<form method="POST">
-    <label for="myDate">Date goes here</label>
-    <input for="myDate" type="date" id="myDate" name="myDate" />
-    <input type="submit" />
-</form>
-
 <div class="w3-container">
+    <h1>GuestList</h1>
+    <button onClick="window.location.reload();">Refresh Page</button>
+
+    <h2>Show items but selecting a date and press enter</h2>
+
+    <form method="POST">
+        <label for="myDate">Date goes here</label>
+        <input for="myDate" type="date" id="myDate" name="myDate" />
+        <input type="submit" />
+    </form>
+
+
 
     @if (Model.NewDate == null)
     {
@@ -103,7 +103,7 @@
                 <th>
                     Children
                 </th>
-               
+
             </tr>
         </thead>
         <tbody>
@@ -163,11 +163,11 @@
                 <th>
                     Children
                 </th>
-               
+
             </tr>
         </thead>
         <tbody>
-            @{  var bookingadult = 0;
+            @{ var bookingadult = 0;
                 var booingchild = 0;}
 
             @foreach (var item in Model.booking)
@@ -175,14 +175,14 @@
                 bookingadult += item.Adults;
                 booingchild += item.Children;
             }
-                <tr>
-                    <td style="color:black">
-                        @Html.DisplayFor(modelItem => bookingadult)
-                    </td>
-                    <td style="color:black">
-                        @Html.DisplayFor(modelItem => booingchild)
-                    </td>
-                </tr>
-            
+            <tr>
+                <td style="color:black">
+                    @Html.DisplayFor(modelItem => bookingadult)
+                </td>
+                <td style="color:black">
+                    @Html.DisplayFor(modelItem => booingchild)
+                </td>
+            </tr>
+
     </table>
 </div>
