@@ -10,7 +10,7 @@
     <div class="w3-container">
         <h1>Indivual guest list</h1>
 
-        <p>
+        <p class="btn btn-primary">
             <a asp-action="Create">Create New</a>
         </p>
         <table class="w3-table-all">
@@ -46,9 +46,9 @@
                             @Html.DisplayFor(modelItem => item.ExpenseDate)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.AdjustId> ">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.AdjustId">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.AdjustId">Delete</a>
+                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.AdjustId> ">Edit</a> |
+                            <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.AdjustId">Details</a> |
+                            <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.AdjustId">Delete</a>
                         </td>
                     </tr>
                 }
