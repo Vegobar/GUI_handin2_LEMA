@@ -379,7 +379,9 @@ body {
     -webkit-transform-style: preserve-3d;
 }
 
-
+td {
+    color: black;
+}
 
 /* w3 css styles
 -------------------------------------------------- */
