@@ -115,7 +115,7 @@ body {
 }
 
 .footer {
-  position: relative;
+  position: absolute;
   box-shadow:none;
   bottom: 0;
   width: 100%;
