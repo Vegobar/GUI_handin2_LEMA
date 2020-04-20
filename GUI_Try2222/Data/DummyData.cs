@@ -59,7 +59,7 @@ namespace GUI_Try2222.Data
                 if (result.Succeeded)
                 {
                     await userManager.AddPasswordAsync(user, password1);
-                    await userManager.AddToRoleAsync(user, role1);
+                    await userManager.AddToRoleAsync(user, role2);
                 }
                 adminId1 = user.Id;
             }
@@ -78,7 +78,7 @@ namespace GUI_Try2222.Data
                 if(result.Succeeded)
                 {
                     await userManager.AddPasswordAsync(user, password2);
-                    await userManager.AddToRoleAsync(user, role2);
+                    await userManager.AddToRoleAsync(user, role1);
                 }
                 adminId2 = user.Id;
             }
