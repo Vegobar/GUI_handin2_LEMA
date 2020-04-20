@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GUI_Try2222.Controllers
 {
-    [Authorize(Roles = "Kitchen")]
+    [Authorize(Roles = "Restaurant")]
     public class BookingsController : Controller
     {
         private readonly ApplicationDbContext _context;

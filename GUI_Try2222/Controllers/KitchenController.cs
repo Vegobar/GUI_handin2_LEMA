@@ -12,7 +12,8 @@ using GUI_Try2222.Models;
 
 namespace GUI_Try2222.Controllers
 {
-    //[Authorize(Roles = "Restaurant")]
+
+    [Authorize(Roles = "Kitchen")]
     public class KitchenController : Controller
     {
         private readonly ApplicationDbContext _context;

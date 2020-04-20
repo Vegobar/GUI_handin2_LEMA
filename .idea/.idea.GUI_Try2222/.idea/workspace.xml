@@ -8,7 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GUI_Try2222/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GUI_Try2222/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GUI_Try2222/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GUI_Try2222/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_Try2222/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Try2222/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Try2222/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Create.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Delete.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Details.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Edit.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_Try2222/Views/Kitchen/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,12 @@
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Areas/Identity/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/config/applicationhost.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/Shared/_LoginPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GUI_Try2222/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GUI_Try2222/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/Bookings/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GUI_Try2222/Views/Bookings/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -65,6 +74,8 @@
         <option value="$PROJECT_DIR$/GUI_Try2222/Controllers/ReceptionController.cs" />
         <option value="$PROJECT_DIR$/GUI_Try2222/Startup.cs" />
         <option value="$PROJECT_DIR$/GUI_Try2222/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/GUI_Try2222/Views/Home/Index.cshtml" />
+        <option value="$PROJECT_DIR$/GUI_Try2222/Controllers/KitchenController.cs" />
       </list>
     </option>
   </component>
@@ -81,7 +92,71 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.GUI_Try2222: IIS Express">
+  <component name="RunManager" selected="Azure - Publish Web App.weeb app">
+    <configuration default="true" type="AzureDotNetWebAppPublish" factoryName="Azure Web App">
+      <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/GUI_Try2222/GUI_Try2222.csproj" />
+      <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP" value="1" />
+      <option name="AZURE_WEB_APP_ID" value="" />
+      <option name="AZURE_WEB_APP_NAME" value="webapp-guihandin2" />
+      <option name="AZURE_WEB_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_WEB_APP_RESOURCE_GROUP_NAME" value="NetworkWatcherRG" />
+      <option name="AZURE_WEB_APP_OPERATING_SYSTEM" value="WINDOWS" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP_SERVICE_PLAN" value="1" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_ID" value="" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_NAME" value="appsp-200420093413" />
+      <option name="AZURE_WEB_APP_LOCATION" value="eastus" />
+      <option name="AZURE_WEB_APP_PRICING_TIER" value="" />
+      <option name="AZURE_WEB_APP_NET_FRAMEWORK" value="4.7" />
+      <option name="AZURE_WEB_APP_NET_CORE_RUNTIME" value="DOTNETCORE 2.1" />
+      <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+      <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+      <option name="AZURE_SQL_DATABASE_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="N/A" />
+      <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+      <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+      <method v="2" />
+    </configuration>
+    <configuration name="weeb app" type="AzureDotNetWebAppPublish" factoryName="Azure Web App">
+      <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/GUI_Try2222/GUI_Try2222.csproj" />
+      <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="45815d7a-79d6-4d17-b1a7-7aa18385dd29" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP" value="0" />
+      <option name="AZURE_WEB_APP_ID" value="/subscriptions/45815d7a-79d6-4d17-b1a7-7aa18385dd29/resourceGroups/NetworkWatcherRG/providers/Microsoft.Web/sites/guihandin2-200420093504" />
+      <option name="AZURE_WEB_APP_NAME" value="" />
+      <option name="AZURE_WEB_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_WEB_APP_RESOURCE_GROUP_NAME" value="" />
+      <option name="AZURE_WEB_APP_OPERATING_SYSTEM" value="WINDOWS" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP_SERVICE_PLAN" value="0" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_ID" value="/subscriptions/45815d7a-79d6-4d17-b1a7-7aa18385dd29/resourceGroups/NetworkWatcherRG/providers/Microsoft.Web/serverfarms/guihandin2-200420093504" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_NAME" value="" />
+      <option name="AZURE_WEB_APP_LOCATION" value="eastus" />
+      <option name="AZURE_WEB_APP_PRICING_TIER" value="B1" />
+      <option name="AZURE_WEB_APP_NET_FRAMEWORK" value="4.7" />
+      <option name="AZURE_WEB_APP_NET_CORE_RUNTIME" value="DOTNETCORE 2.1" />
+      <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="45815d7a-79d6-4d17-b1a7-7aa18385dd29" />
+      <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+      <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+      <option name="AZURE_SQL_DATABASE_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="N/A" />
+      <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+      <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+      <method v="2" />
+    </configuration>
     <configuration name="GUI_Try2222" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/GUI_Try2222/GUI_Try2222.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -112,6 +187,11 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.GUI_Try2222" />
+      <item itemvalue=".NET Launch Settings Profile.GUI_Try2222: IIS Express" />
+      <item itemvalue="Azure - Publish Web App.weeb app" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -126,6 +206,8 @@
       <workItem from="1586972144096" duration="2587000" />
       <workItem from="1587148822475" duration="453000" />
       <workItem from="1587149335138" duration="23000" />
+      <workItem from="1587367987908" duration="510000" />
+      <workItem from="1587369532819" duration="3703000" />
     </task>
     <servers />
   </component>
@@ -134,30 +216,61 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1011" y="323" key="#Unnamed" timestamp="1587369692858">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1011" y="323" key="#Unnamed/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587369692858" />
+    <state x="252" y="400" width="1092" height="871" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587370378092">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="252" y="400" width="1092" height="871" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587370378092" />
+    <state x="1011" y="323" key="#weeb_app" timestamp="1587369909064">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1011" y="323" key="#weeb_app/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587369909064" />
     <state x="1038" y="561" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1586973019744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1038" y="561" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1586973019744" />
-    <state width="1234" height="401" key="GridCell.Tab.0.bottom" timestamp="1587149275399">
+    <state width="1234" height="405" key="GridCell.Tab.0.bottom" timestamp="1587406859785">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="401" key="GridCell.Tab.0.bottom/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587149275399" />
-    <state width="1234" height="401" key="GridCell.Tab.0.center" timestamp="1587149275399">
+    <state width="1234" height="405" key="GridCell.Tab.0.bottom/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587406859785" />
+    <state width="1234" height="405" key="GridCell.Tab.0.center" timestamp="1587406859785">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="401" key="GridCell.Tab.0.center/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587149275399" />
-    <state width="1234" height="401" key="GridCell.Tab.0.left" timestamp="1587149275399">
+    <state width="1234" height="405" key="GridCell.Tab.0.center/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587406859785" />
+    <state width="1234" height="405" key="GridCell.Tab.0.left" timestamp="1587406859785">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="401" key="GridCell.Tab.0.left/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587149275399" />
-    <state width="1234" height="401" key="GridCell.Tab.0.right" timestamp="1587149275399">
+    <state width="1234" height="405" key="GridCell.Tab.0.left/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587406859785" />
+    <state width="1234" height="405" key="GridCell.Tab.0.right" timestamp="1587406859785">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="401" key="GridCell.Tab.0.right/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587149275399" />
+    <state width="1234" height="405" key="GridCell.Tab.0.right/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587406859785" />
     <state x="781" y="342" key="SettingsEditor" timestamp="1586973786697">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="342" key="SettingsEditor/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1586973786697" />
+    <state x="952" y="554" key="SignInWindow" timestamp="1587369847764">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="952" y="554" key="SignInWindow/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587369847764" />
+    <state x="1021" y="441" key="SubscriptionsDialog" timestamp="1587369856910">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1021" y="441" key="SubscriptionsDialog/2560.174.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1587369856910" />
   </component>
 </project>
