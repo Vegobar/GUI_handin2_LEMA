@@ -11,5 +11,6 @@ namespace GUI_Try2222.Data
         public int RoomNumber { get; set; }
         public int Adults { get; set; }
         public int Children { get; set; }
+        public bool CanEditData { get; set; }
     }
 }

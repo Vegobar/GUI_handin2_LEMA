@@ -10,23 +10,27 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GUI_Try2222.Controllers
 {
-    [Authorize(Roles = "Kitchen")]
+    
     public class BookingsController : Controller
     {
+        
         private readonly ApplicationDbContext _context;
 
+      
         public BookingsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // GET: Bookings
+        [Authorize(Roles = "Restaurant,Reception")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Booking.ToListAsync());
         }
 
         // GET: Bookings/Details/5
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,7 +49,7 @@ namespace GUI_Try2222.Controllers
         }
 
         // GET: Bookings/Create
-       
+        [Authorize(Roles = "Restaurant")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +60,7 @@ namespace GUI_Try2222.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> Create([Bind("BookingId,RoomNumber,Adults,Children")] Booking booking)
         {
             if (ModelState.IsValid)
@@ -68,6 +73,7 @@ namespace GUI_Try2222.Controllers
         }
 
         // GET: Bookings/Edit/5
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,6 +94,7 @@ namespace GUI_Try2222.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomNumber,Adults,Children")] Booking booking)
         {
             if (id != booking.BookingId)
@@ -119,6 +126,7 @@ namespace GUI_Try2222.Controllers
         }
 
         // GET: Bookings/Delete/5
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +147,7 @@ namespace GUI_Try2222.Controllers
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Restaurant")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var booking = await _context.Booking.FindAsync(id);
@@ -147,6 +156,7 @@ namespace GUI_Try2222.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Restaurant")]
         private bool BookingExists(int id)
         {
             return _context.Booking.Any(e => e.BookingId == id);

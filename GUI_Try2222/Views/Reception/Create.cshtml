@@ -33,9 +33,9 @@
         </div>
     </div>
 
-    <div class="btn btn-primary">
-        <a asp-action="Index">Back to List</a>
-    </div>
+    
+        <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        <input class="btn btn-primary" type="button" value="See rooms" onclick="@("window.location.href='" + @Url.Action("Index", "Bookings") + "'");" />
 
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
