@@ -5,11 +5,13 @@
 }
 
     <div class="w3-container">
-        <h1>Index</h1>
-
-        <p class="btn btn-primary">
-            <a asp-action="Create">Create New</a>
-        </p>
+        <h1>Checked in guests</h1>
+        @if (User.IsInRole("Restaurant"))
+        {
+            <p class="btn btn-primary">
+                <a asp-action="Create">Create New</a>
+            </p>
+        }
         <table class="w3-table-all">
             <thead>
                 <tr class="w3-gray">
@@ -22,29 +24,35 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Children)
                     </th>
-                    <th></th>
+                    @if (User.IsInRole("Restaurant"))
+                    {
+                        <th></th>
+                    }
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RoomNumber)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Adults)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Children)
-                        </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adults)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Children)
+                    </td>
+                    @if (User.IsInRole("Restaurant"))
+                    { 
                         <td>
                             <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> |
                             <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.BookingId">Details</a> |
                             <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.BookingId">Delete</a>
                         </td>
-                    </tr>
+                     }
+                </tr>
                 }
             </tbody>
         </table>
-        </div>
+    </div>
