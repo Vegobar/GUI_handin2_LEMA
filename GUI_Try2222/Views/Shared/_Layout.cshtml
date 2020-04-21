@@ -26,14 +26,20 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
+                            @if (User.IsInRole("Restaurant"))
+                            {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="Create">Restaurant</a>
                             </li>
-                   
+                            }
+
+                            @if (User.IsInRole("Kitchen"))
+                            {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Kitchen" asp-action="CookingDetails">Køkken</a>
                             </li>
-                            
+                            }
+
                             @if (User.IsInRole("Reception"))
                             {
                             <li class="nav-item">
