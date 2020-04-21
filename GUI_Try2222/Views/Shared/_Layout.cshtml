@@ -29,12 +29,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Bookings" asp-action="Create">Restaurant</a>
                             </li>
+                   
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Kitchen" asp-action="CookingDetails">Køkken</a>
                             </li>
+                            
+                            @if (User.IsInRole("Reception"))
+                            {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Reception" asp-action="Create">Reception</a>
                             </li>
+                            }
                         </ul>
                     </div>
                 </div>
